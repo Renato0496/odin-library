@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
     <header>
         Your new library
     </header>
-    <span class="material-icons-two-tone add">
+    <span class="material-icons-two-tone add" id="openModal">
         library_add
     </span>
     <div class="bigPart">
@@ -39,6 +39,19 @@
     <footer>
         Made by <a href="https://github.com/Renato0496?tab=repositories">Renato Alvarado</a>
     </footer>
+    <div id="myFirstModal" class="modal">
+        <form class="formModal">
+            <span class="close">&times;</span>
+            <h2>Book data</h2>
+            <input class="textInput" type="text" id="title" name="title" placeholder="Title">
+            <input class="textInput" type="text" id="author" name="author" placeholder="Author">
+            <input class="textInput" type="text" id="pages" name="pages" placeholder="Pages">
+            <input type="checkbox" checked id="read" name="read" value="Read?">
+            <label for="read" class="labeled"> Have you read it?</label>
+            <button type="submit">Add book</button>
+        </form>
+
+    </div>
 </body>
 
 </html>
