@@ -39,16 +39,19 @@ function Book(title, author, pages, read) {
 };
 
 function addBookToLibrary() {
-    let addTitle = document.getElementsByClassName('textInput')[0].value;
-    let addAuthor = document.getElementsByClassName('textInput')[1].value;
-    let addPages = document.getElementsByClassName('textInput')[2].value;
+    let addTitle = document.getElementsByClassName('textInput')[0];
+    let addAuthor = document.getElementsByClassName('textInput')[1];
+    let addPages = document.getElementsByClassName('textInput')[2];
     let readen = document.getElementById('readOrNot').checked;
-    if (addTitle === '' || addAuthor === '' || addPages === '') {
+    if (addTitle.value === '' || addAuthor.value === '' || addPages.value === '') {
         return;
     } else {
-        myLibrary.push(new Book(addTitle, addAuthor, addPages, readen));
+        myLibrary.push(new Book(addTitle.value, addAuthor.value, addPages.value, readen));
         modal.style.display = 'none';
-    }
+    };
+    addTitle.value = "";
+    addAuthor.value = "";
+    addPages.value = "";
 };
 
 // display library
