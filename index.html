@@ -28,7 +28,7 @@
                 <th>Number of pages</th>
                 <th>Read?</th>
             </tr>
-            <tr>
+            <tr id="row1">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -46,9 +46,9 @@
             <input class="textInput" type="text" id="title" name="title" placeholder="Title">
             <input class="textInput" type="text" id="author" name="author" placeholder="Author">
             <input class="textInput" type="text" id="pages" name="pages" placeholder="Pages">
-            <input type="checkbox" checked id="read" name="read" value="Read?">
+            <input type="checkbox" id="readOrNot" name="readOrNot" value="Read?">
             <label for="read" class="labeled"> Have you read it?</label>
-            <button type="submit">Add book</button>
+            <button type="button" class="addButton">Add book</button>
         </form>
 
     </div>
