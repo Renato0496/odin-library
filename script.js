@@ -14,7 +14,10 @@ closeMod.onclick = () => {
     modal.style.display = 'none';
 };
 
-addBut.addEventListener('click', addBookToLibrary);
+addBut.addEventListener('click', ()=>{
+    addBookToLibrary();
+    displayTable();
+});
 
 // Library
 
@@ -50,3 +53,34 @@ function addBookToLibrary() {
 
 // display library
 
+let libTable = document.querySelector('.container');
+
+function displayTable() {
+
+    while(libTable.rows.length > 1 ) {
+        libTable.removeChild(libTable.lastChild);
+    }
+
+    for (let i = 0;i<myLibrary.length;i++){
+
+        const tr = document.createElement('tr');
+        tr.classList.add('libraryRows');
+        tr.id = `row${i+1}`;
+
+        const tdTitle = document.createElement('td');
+        tdTitle.textContent = `${myLibrary[i].title}`;
+        const tdAuthor = document.createElement('td');
+        tdAuthor.textContent = `${myLibrary[i].author}`;
+        const tdPages = document.createElement('td');
+        tdPages.textContent = `${myLibrary[i].pages}`;
+        const tdRead = document.createElement('td');
+        tdRead.textContent = `${myLibrary[i].read}`;
+
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdAuthor);
+        tr.appendChild(tdPages);
+        tr.appendChild(tdRead);
+
+        libTable.appendChild(tr);
+    };
+}

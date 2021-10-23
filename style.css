@@ -58,6 +58,8 @@ tr {
 }
 td {
     height: 30px;
+    font-size: 20px;
+    text-align: center; 
 }
 footer{
     font-family: 'Mukta', sans-serif;
