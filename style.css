@@ -126,3 +126,12 @@ button[type=submit] {
     cursor: pointer;
     text-decoration: underline;
 }
+a:visited {
+    color: aquamarine;
+}
+a:hover {
+    color: aquamarine;
+}  
+img {
+    width: 25px;
+}

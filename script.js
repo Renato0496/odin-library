@@ -46,7 +46,13 @@ function addBookToLibrary() {
     if (addTitle.value === '' || addAuthor.value === '' || addPages.value === '') {
         return;
     } else {
-        myLibrary.push(new Book(addTitle.value, addAuthor.value, addPages.value, readen));
+        let algo ='';
+        if (readen === true){
+            algo+= 'True';
+        } else if (readen === false) {
+            algo += 'False';
+        };
+        myLibrary.push(new Book(addTitle.value, addAuthor.value, addPages.value,algo));
         modal.style.display = 'none';
     };
     addTitle.value = "";
@@ -79,11 +85,13 @@ function displayTable() {
         const tdRead = document.createElement('td');
         tdRead.classList.add('status');
         tdRead.textContent = `${myLibrary[i].read}`;
+        tdRead.style.color = '#022E63';
         const tdDelete = document.createElement('td');
         let delSpan = document.createElement('span');
         delSpan.innerHTML = 'delete';
         delSpan.classList.add('material-icons-outlined');
         delSpan.classList.add('deleteIcon');
+        delSpan.style.color = '#8B1214';
         tdDelete.appendChild(delSpan);
 
         tr.appendChild(tdTitle);
@@ -119,10 +127,10 @@ const maybeRead = function () {
 
     for (let i = 0; i < readStatus.length; i++) {
         readStatus[i].onclick = function () {
-            if (readStatus[i].textContent === 'true') {
-                readStatus[i].textContent = 'false';
-            } else if (readStatus[i].textContent === 'false') {
-                readStatus[i].textContent = 'true';
+            if (readStatus[i].textContent === 'True') {
+                readStatus[i].textContent = 'False';
+            } else if (readStatus[i].textContent === 'False') {
+                readStatus[i].textContent = 'True';
             };
         }
     };
