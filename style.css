@@ -19,7 +19,7 @@ header {
     grid-column: 1/3;
     border: 4px solid rgb(118, 63, 38);
 }
-span{
+.add{
     position: relative;
     grid-row: 1;
     grid-column: 2/3;
@@ -117,4 +117,12 @@ button[type=submit] {
     float: right;
     margin-right: 5%;
     font-size: 100%;
+}
+.deleteIcon {
+    padding-top: 5px;
+    cursor: pointer;
+}
+.status {
+    cursor: pointer;
+    text-decoration: underline;
 }
